@@ -45,7 +45,7 @@ fetchTweets = () => {
   }
 
   fetchKeyWords=(mystring, numofwords) => {
-    mystring = mystring.slice().replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()]/g,"").toLowerCase();
+    mystring = mystring.slice().replace(/[\.,-\/!$%\^&\*;:{}=\-_`~()]/g,"").toLowerCase();
     var words = mystring.split(' ');
     var sortedWords = words.sort()
 
@@ -71,7 +71,36 @@ fetchTweets = () => {
       in: 1,
       if: 1,
       im: 1,
-      a: 1
+      a: 1,
+      i: 1,
+      and: 1,
+      for: 1,
+      ur: 1,
+      on: 1,
+      is: 1,
+      do: 1,
+      with: 1,
+      all: 1,
+      get: 1,
+      they: 1,
+      be: 1,
+      one: 1,
+      what: 1,
+      still: 1,
+      an: 1,
+      when: 1,
+      this: 1,
+      can: 1,
+      bc: 1,
+      was: 1,
+      from: 1,
+      our: 1,
+      as: 1,
+      we: 1,
+      amp: 1,
+      et: 1,
+      us: 1,
+      more: 1
 
     }
 
