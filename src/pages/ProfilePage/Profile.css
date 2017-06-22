@@ -1,0 +1,247 @@
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body{
+    background-color: white;
+    font-family: "Lato";
+    font-size:30px;
+}
+
+.header{
+  width: 100%;
+  height: 250px;
+  font-size: 24px;
+  min-width: 1200px;
+
+}
+
+.headerContent{
+  display: flex;
+}
+
+.beackgroundImage{
+  width: 80%;
+  margin-left:50px;
+  margin-right: 50px;
+}
+
+.imageBackground{
+  width: 100%;
+}
+
+.left{
+  width: 30%;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+.imageContainerContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description{
+  font-size:16px;
+  margin-bottom: 1px;
+}
+
+.imageContainer{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.avatarImage{
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+}
+
+.nameVerified{
+  display: flex;
+  margin: 5px;
+}
+
+.name{
+  margin: 3px;
+}
+
+.dateJoined{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.fa-calendar{
+  margin-right: 6px;
+}
+
+.nameUser{
+  margin: 10px;
+
+}
+
+.userText{
+  font-family: "Lato";
+}
+
+.right{
+  width:70%;
+}
+
+.rightTop{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-left: 50px;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding-top: 30px;
+}
+
+.searchBar{
+  text-align: right;
+  margin-right: 60px;
+  margin-top: 20px;
+}
+
+/*.searchBar{
+    font-family: "Poiret One";
+    font-size: 16px;
+    font-weight: bold;
+    height: 25px;
+    width:  90px;
+    border-radius: 5px;
+    color: white;
+    background-color: lightslategray;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in;
+
+}
+
+.searchBar:hover{
+    transform: scale(1.05);
+    background-color: rgb(64,153,255) ;
+    color: darkslategray;
+    /*box-shadow: inset 0 0 0 2px #3071A9;*/
+/*}
+
+
+/*.searchBar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    border-radius: 5px;
+
+}*/
+/* When the input field gets focus, change its width to 100% */
+/*input[type=text]:focus {
+    width: 50%;
+    margin-right: 20px;
+  }*/
+
+
+.profile-buttons{
+    width:400px;
+    height:300px;
+    margin-top: 30px;
+    margin-left:200px;
+    display: block;
+    justify-content: center;
+    margin: auto;
+    flex-direction: column;
+}
+
+
+.profile-photo{
+  width:90px;
+  height:90px;
+  display:block;
+  border-radius: 100px;
+
+}
+
+.profile-lower{
+    text-align: center;
+    background-color: #30415D;
+    background-repeat: no-repeat;
+    height: 600px;
+
+/*    filter: opacity(0.4);*/
+    z-index: 0;
+
+}
+
+
+.profile-button1:hover, .profile-button2:hover ,.profile-button3:hover {
+  width: 400px;
+}
+
+.profile-button1:hover .profile-button1-label {
+  visibility: visible;
+}
+/*
+.profile-button1:hover .bigWord{
+  visibility: hidden;
+}*/
+
+/*.profile-button1 span.bigWord:hover {
+  visibility: hidden;
+  display: none;
+}
+
+
+.profile-button1-label {
+  visibility: hidden;
+}*/
+
+.profile-button1,.profile-button2,.profile-button3{
+    font-family: 'Lato';
+    margin-top:60px;
+    height: 100px;
+    width: 300px;
+    text-align: center;
+    font-size: 40px;
+    border: 1px solid lightslategray;
+    background-color: #8EAEBD;
+    color: white;
+    border-radius: 10px;
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+
+button:hover span {display:none}
+.profile-button1:hover:before {
+  content:"Using Google's natural language processing API we analyze the vibe of your tweets";
+  font-size: 15px;
+
+}
+
+button:hover span {display:none}
+.profile-button2:hover:before {
+  content:"daddy";
+  font-size: 15px;
+
+}
+
+button:hover span {display:none}
+.profile-button3:hover:before {
+  content:"spank me";
+  font-size: 15px;
+
+}
+
+/*.profile-button3{
+    margin-bottom: 30px;
+}*/
