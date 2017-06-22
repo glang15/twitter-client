@@ -157,12 +157,12 @@ fetchAll = () => {
                     <span className="bigWord">Timeline</span>
                   <span className = "profile-button2-label"></span>
                     </button>:null}
-              {this.state.showGraphTimeline ? <Timeline />:null}
+              {this.state.showGraphTimeline ? <Timeline  />:null}
               {this.state.button3 ? <button className = 'profile-button3' onClick={this._handleClick3}>
                   <span className="bigWord">KeyWord</span>
                 <span className = "profile-button3-label"></span>
                     </button>:null}
-              {this.state.showGraphKeyWord ? <KeyWord />:null}
+              {this.state.showGraphKeyWord ? <KeyWord {...this.props}/>:null}
             </div>
             </div>
           </div>
