@@ -9,12 +9,13 @@ import Timeline from "../Timeline"
 class Profile extends React.Component {
     constructor(props){
       super(props);
-
-    // this._handleClick = this._handleClick.bind(this);
     this.state={
       showGraphSentiment: false,
       showGraphKeyWord: false,
-      showGraphTimeline: false
+      showGraphTimeline: false,
+      button1: true,
+      button2: true,
+      button3: true
     }
 }
 
@@ -54,21 +55,20 @@ fetchAll = () => {
     console.log("hello")
     this.setState({
       showGraphSentiment: !this.state.showGraphSentiment,
+      button2: !this.state.button2,
+      button3: !this.state.button3
     })
-    document.getElementsByClassName("profile-button2")[0].style.display ="none"
-    document.getElementsByClassName("profile-button3")[0].style.display ="none"
-// alert("hello")
   }
+
 
   _handleClick2 = (e) => {
     e.preventDefault();
     console.log("hello")
     this.setState({
       showGraphTimeline: !this.state.showGraphTimeline,
+      button1: !this.state.button1,
+      button3: !this.state.button3
     })
-    document.getElementsByClassName("profile-button1")[0].style.display ="none"
-    document.getElementsByClassName("profile-button3")[0].style.display ="none"
-    // alert("sup")
   }
 
   _handleClick3 = (e) => {
@@ -76,25 +76,10 @@ fetchAll = () => {
     console.log("hello")
     this.setState({
       showGraphKeyWord: !this.state.showGraphKeyWord,
+      button1: !this.state.button1,
+      button2: !this.state.button2
       })
-      document.getElementsByClassName("profile-button1")[0].style.display ="none"
-      document.getElementsByClassName("profile-button2")[0].style.display ="none"
-
-    // alert("hi")
-
   }
-
-  // _hideButtons1 = () =>{
-  //   alert("hello")
-  //   document.getElementByClassName("profile-button2").style.display = "none"
-  // }
-  // _hideButtons2 = () =>{
-  //   document.getElementByClassName("profile-button1").style.display = "none"
-  // }
-  // _hideButtons3 = () =>{
-    // document.getElementByClassName("profile-button1").style.display ="none"
-  // }
-
   _handleSubmit=()=>{
       history.push(`/search/${this.refs.newUsername.value}/profile`)
       this.fetchAll()
@@ -103,9 +88,10 @@ fetchAll = () => {
   render () {
 
     if (!this.state.profile | !this.state.tweets) {
-      return (<div className = "user-page">LOADING...</div>);
+      return (
+        <div className = "user-page">LOADING...</div>
+      );
     }
-
     return(
       <div>
         <div className = "header">
@@ -162,29 +148,26 @@ fetchAll = () => {
               <img className="profile-photo" />
             </div>
             <div className="profile-lower">
-              <div className='profile-buttons'>
-                  <button className='profile-button1' onClick={this._handleClick1}>
+              {this.state.button1 ? <button className = 'profile-button1' onClick={this._handleClick1}>
                     <span className="bigWord">Sentiment</span>
-                    <span className="profile-button1-label"> </span>
-                    </button>
-                    {this.state.showGraphSentiment ? <Sentiment />: null }
-                  <button className='profile-button2' onClick={this._handleClick2}>
-                    <span>Timeline</span>
-                  {this.state.showGraphTimeline  ? <Timeline />: null }
-
-                  </button>
-                  <button className='profile-button3' onClick={this._handleClick3}>
-                  {/* {this.state.button1 && this.state.button2 ? null: this._hideButtons3} */}
-                  {this.state.showGraphKeyWord ? <KeyWord />: null}
-                    <span>Keywords</span>
-
-                  </button>
-              </div>
+                    <span className = "profile-button1-label"></span>
+                    </button>:null}
+              {this.state.showGraphSentiment ? <Sentiment />:null}
+              {this.state.button2 ? <button className = 'profile-button2' onClick={this._handleClick2}>
+                    <span className="bigWord">Timeline</span>
+                  <span className = "profile-button2-label"></span>
+                    </button>:null}
+              {this.state.showGraphTimeline ? <Timeline />:null}
+              {this.state.button3 ? <button className = 'profile-button3' onClick={this._handleClick3}>
+                  <span className="bigWord">KeyWord</span>
+                <span className = "profile-button3-label"></span>
+                    </button>:null}
+              {this.state.showGraphKeyWord ? <KeyWord />:null}
+            </div>
             </div>
           </div>
-      </div>
-    )
-  }
+    );
+  };
 }
 
 export default Profile;
