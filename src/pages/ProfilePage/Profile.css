@@ -10,7 +10,7 @@ body{
 
 .header{
   width: 100%;
-  height: 250px;
+  height: 270px;
   font-size: 24px;
   min-width: 1200px;
 
@@ -174,9 +174,9 @@ input[type=text] {
 
 .profile-lower{
     text-align: center;
-    background-color: #30415D;
+    background-color: #00aced;
     background-repeat: no-repeat;
-    height: 600px;
+    height: 800px;
 
 /*    filter: opacity(0.4);*/
     z-index: 0;
@@ -216,7 +216,7 @@ input[type=text] {
     border: 1px solid lightslategray;
     background-color: #8EAEBD;
     color: white;
-    border-radius: 10px;
+    border-radius: 4px;
     z-index: 3;
     transition: all 0.3s ease;
 }
@@ -226,22 +226,87 @@ button:hover span {display:none}
   content:"Using Google's natural language processing API we analyze the vibe of your tweets";
   font-size: 15px;
 
+
 }
 
-button:hover span {display:none}
+
 .profile-button2:hover:before {
-  content:"daddy";
+  content:"Displays your tweet data over over a yearly period";
   font-size: 15px;
 
 }
 
-button:hover span {display:none}
+
 .profile-button3:hover:before {
-  content:"spank me";
+  content:"Displays the main topics that you talk about ";
   font-size: 15px;
 
 }
 
+.profile-button-move{
+
+}
+
+.profile-buttons{
+  display: inline-block;
+}
+
+.footer{
+    width: 100%;
+    height: 120px;
+    min-width: 1200px;
+    background-color: lightslategray;
+    display: flex;
+}
+
+.wordsList{
+    width: 50%;
+    display: flex;
+    align-items: center;
+/*    justify-content: space-between*/
+}
+
+.socialIconsList{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+.footerInfo{
+    margin-left: 40px;
+    color: white;
+    font-family: 'Lato';
+}
+
+.socialIcon{
+    margin-right: 25px;
+    background-color: black;
+    color: white;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.profile-background{
+  border: white solid 0px;
+  margin-top: 5px;
+}
+
+.most-pos , .most-neg{
+width: 400px;
+height: 200px;
+
+}
+
+.most-tweets{
+  margin-left:100px;
+  width:500px;
+}
 /*.profile-button3{
     margin-bottom: 30px;
 }*/

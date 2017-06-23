@@ -1,0 +1,40 @@
+.contentContainer{
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.graph-tweets{
+  width: 75%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.most-tweets{
+  width: 25%;
+}
+
+.most-pos{
+  margin-top: 50px;
+  display: flex;
+  width: 500px ;
+  height: 180px;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgrey;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+}
+
+.most-neg{
+  margin-top: 50px;
+  display: flex;
+  height: 180px;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgrey;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+}

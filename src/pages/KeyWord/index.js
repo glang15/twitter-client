@@ -1,4 +1,8 @@
 import React from 'react';
+import {Bar} from 'react-chartjs-2';
+import { defaults } from 'react-chartjs-2';
+import style from './style.css';
+// var BarChart = require("react-chartjs").Bar;
 
 var mystring = '';
 class KeyWord extends React.Component {
@@ -6,12 +10,42 @@ class KeyWord extends React.Component {
   this.state={
     tweets: [],
     tweetString: '',
-    keyWords: []
+    keyWords: [],
+    uniquewords: {},
+    barData:{}
   }
 }
 
-componentDidMount(){
+_BarGraph=()=>{
+
+  this.setState({
+    barData: {
+                labels : [this.state.uniquewords[0].key,this.state.uniquewords[1].key,this.state.uniquewords[2].key,this.state.uniquewords[3].key,
+                this.state.uniquewords[4].key,this.state.uniquewords[5].key,this.state.uniquewords[6].key,this.state.uniquewords[7].key,this.state.uniquewords[8].key,this.state.uniquewords[9].key],
+                datasets: [
+                  {
+                    label: 'KeyWords',
+                    backgroundColor: 'pink',
+                    borderColor: 'rgba(255,99,132,1)',
+                    borderWidth: 1,
+                    hoverBackgroundColor: 'pink',
+                    hoverBorderColor: 'rgba(255,99,132,1)',
+
+                        data : [this.state.uniquewords[0].value,this.state.uniquewords[1].value,this.state.uniquewords[2].value,this.state.uniquewords[3].value,
+                        this.state.uniquewords[4].value,this.state.uniquewords[5].value,this.state.uniquewords[6].value,this.state.uniquewords[7].value,
+                        this.state.uniquewords[8].value,this.state.uniquewords[9].value]
+                      }
+                ]
+              }
+            })
+          }
+
+
+
+
+componentDidMount = () => {
   this.fetchTweets()
+
 }
 
 sortObject = (obj) => {
@@ -36,7 +70,8 @@ fetchTweets = () => {
         res.data.forEach((twit) => {
           this.setState({
             tweets: this.state.tweets.concat([twit.text]),
-            tweetString: this.state.tweetString += twit.text + ". "
+            tweetString: this.state.tweetString += twit.text + ". ",
+
           })
         })
       }).then(() => {
@@ -118,16 +153,27 @@ fetchTweets = () => {
 
 
 
-console.log(this.sortObject(uniqueWords));
-console.log(uniqueWords)
+var uniquewordsSorted = this.sortObject(uniqueWords);
+this.setState({
+  uniquewords: uniquewordsSorted
+})
+console.log(uniquewordsSorted);
+console.log(uniquewordsSorted[0].key)
+console.log(uniquewordsSorted[0].value)
 
-  }
-
+this._BarGraph()
+}
 
 
   render(){
     return (
-<div>
+<div className = "BarGraph">
+  <Bar data={this.state.barData}
+   width={300}
+ height={200}
+ options={{maintainAspectRatio: false}}
+/>
+<p className = "description">We display the most used words from the user's last 200 tweets, retweets and usernames included.</p>
 </div>
     )
   }

@@ -108,7 +108,7 @@ fetchAll = () => {
             {this.state.profile.verified ? <i class="fa fa-check-circle"></i> : null}
               <div className = "userText">
                 <p className = "nameUser">@{this.state.profile.screen_name}</p>
-              <p className = "description">{this.state.profile.description}</p>
+              <p className = "descriptionBio">{this.state.profile.description}</p>
               <div className = 'dateJoined'>
                 <i className="fa fa-calendar"></i>
                 <p>{this.state.date}</p>
@@ -148,24 +148,43 @@ fetchAll = () => {
               <img className="profile-photo" />
             </div>
             <div className="profile-lower">
+              <div className="profile-buttons">
               {this.state.button1 ? <button className = 'profile-button1' onClick={this._handleClick1}>
                     <span className="bigWord">Sentiment</span>
                     <span className = "profile-button1-label"></span>
                     </button>:null}
-              {this.state.showGraphSentiment ? <Sentiment />:null}
-              {this.state.button2 ? <button className = 'profile-button2' onClick={this._handleClick2}>
-                    <span className="bigWord">Timeline</span>
-                  <span className = "profile-button2-label"></span>
-                    </button>:null}
-              {this.state.showGraphTimeline ? <Timeline  />:null}
+              {this.state.showGraphSentiment ? <div className='profile-background'><Sentiment {...this.props}/></div>:null}
               {this.state.button3 ? <button className = 'profile-button3' onClick={this._handleClick3}>
                   <span className="bigWord">KeyWord</span>
                 <span className = "profile-button3-label"></span>
                     </button>:null}
-              {this.state.showGraphKeyWord ? <KeyWord {...this.props}/>:null}
+              {this.state.showGraphKeyWord ? <div className='profile-background'><KeyWord {...this.props}/></div>:null}
+              </div>
             </div>
-            </div>
-          </div>
+            <div className = "footer">
+                      <div className = "wordsList">
+                          <div className="footerInfo">Contact Us</div>
+                        <div className="footerInfo">Blog</div>
+                      <div className="footerInfo">Legal</div>
+                    <div className="footerInfo">Privacy</div>
+                      </div>
+                      <div className="socialIconsList">
+                          <div className="socialIcon">
+                            <i className="fa fa-facebook"></i>
+                          </div>
+                        <div className="socialIcon">
+                          <i className ="fa fa-twitter"></i>
+                        </div>
+                      <div className="socialIcon">
+                        <i className="fa fa-google-plus"></i>
+                      </div>
+                    <div className="socialIcon">
+                      <i className="fa fa-linkdin"></i>
+                    </div>
+                      </div>
+                  </div>
+        </div>
+      </div>
     );
   };
 }
